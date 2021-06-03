@@ -123,4 +123,9 @@ padding-bottom: 5%;
     border: 3px solid #eee;
 }
 
+.alien {
+    height: 200px;
+    margin: 20px;
+    float: right;
+}
 
