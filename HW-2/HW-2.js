@@ -7,9 +7,9 @@ let total;
 // verification of user's first тumber with alert in case of mistake and 
 // promt in cycle for a new try
 
-firstNum = +prompt("Please, set the first integer number for calculation.", 0);
+firstNum = prompt("Please, set the first integer number for calculation.", 0);
 
-while (isNaN(firstNum) || firstNum == 0 || !Number.isInteger(firstNum)) {
+while (isNaN(+firstNum) || firstNum === null || !Number.isInteger(+firstNum)) {
     alert("It's not the required type of number! Please, try again.");
 	firstNum = +prompt("Please, set the first integer number for calculation.", 0);
 }
@@ -19,9 +19,9 @@ document.write(`Your first number is ${firstNum}.<br>`);
 // verification of user's second number with alert in case of mistake and 
 // promt in cycle for a new try
 
-secondNum = +prompt("Please, set the second integer number for calculation.", 0);
+secondNum = prompt("Please, set the second integer number for calculation.", 0);
 
-while (isNaN(secondNum) || secondNum == 0 || !Number.isInteger(secondNum)) {
+while (isNaN(+secondNum) || secondNum === null || !Number.isInteger(+secondNum)) {
   alert("It's not the required type of number! Please, try again.");
   secondNum = +prompt("Please, set the second integer number for calculation.", 0);
 }
