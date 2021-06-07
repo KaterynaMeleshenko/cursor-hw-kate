@@ -20,7 +20,6 @@ function putNumberInPower(num, pow) {
       }
     }
     else if (pow < 0) {
-      console.log('yes');
       for (let i = 1;  i <= Math.abs(pow); i++) {
       result =  (1 / num) * result;
       }
@@ -65,4 +64,18 @@ function getRandomNumber(n, m) {
   return Math.trunc(randomNumber);
 }
 
-  document.write(`Function No 4: ${getRandomNumber(-500, 400)} <br>`);
+document.write(`Function No 5: ${getRandomNumber(-500, 400)} <br>`);
+
+// 6th function
+
+function countLetter(letter, word) {
+  let letters = word.split('');
+  let lettersNumber = word.length;
+  let letterQuantity = 0;
+    for (let i = 0; i < lettersNumber; i++) {
+      if (letters[i] == letter) letterQuantity = letterQuantity + 1;
+      }
+    return console.log(letterQuantity);
+}
+
+document.write(`Function No 6: ${countLetter('b', 'abrakadabra')} <br>`);
