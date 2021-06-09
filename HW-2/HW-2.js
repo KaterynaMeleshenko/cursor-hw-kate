@@ -4,20 +4,18 @@ let secondNum = null;
 // verification of user's first тumber with alert in case of mistake and 
 // promt in cycle for a new try
 
-do {firstNum = prompt("Please, set the first integer number for calculation.", 0)
-  }
-while (isNaN(+firstNum) || firstNum === null || !Number.isInteger(+firstNum));
+do {
+  firstNum = prompt("Please, set the first integer number for calculation.", 0);
+} while (isNaN(+firstNum) || firstNum === null || !Number.isInteger(+firstNum));
 
 document.write(`Your first number is ${firstNum}.<br>`);
 
 // verification of user's second number with alert in case of mistake and 
 // promt in cycle for a new try
 
-do {secondNum = prompt("Please, set the second integer number for calculation.", 0);
-}
-while (isNaN(+secondNum) || secondNum === null || !Number.isInteger(+secondNum)) {
-  
-}
+do {
+  secondNum = prompt("Please, set the second integer number for calculation.", 0);
+} while (isNaN(+secondNum) || secondNum === null || !Number.isInteger(+secondNum)); 
 
 document.write(`Your second number is ${secondNum}.<br>`);
 
@@ -36,7 +34,7 @@ let total = 0;
 
 for (let i = initialNum; i <= lastNum; i++) {
   if (!evenSkip || i % 2 ) {
-  total += 1;
+  total += i;
   }
 }
 
