@@ -78,7 +78,7 @@ function countLetter(letter, word) {
   const lettersNumber = word.length;
   let letterQuantity = 0;
     for (let i = 0; i < lettersNumber; i++) {
-      if (lettersArray[i] == letter) letterQuantity = letterQuantity + 1;
+      if (lettersArray[i] == letter) letterQuantity += 1;
       }
     return `${letterQuantity} letter(s) "${letter}" exist(s) in the word "${word}".`;
 }
@@ -107,9 +107,8 @@ document.write(`Function No 7: ${convertCurrency('650 uah')} <br>`);
 // 8th function
 
 function getRandomPassword(numbers = 8) {
-  const randomNumber = Math.trunc(Math.random() * 10);
-  let password = randomNumber;
-    for (let i = 2; i <= numbers; i++) {
+  let password = "";
+    for (let i = 1; i <= numbers; i++) {
     password += ( Math.trunc(Math.random() * 10) ).toString();
     }
     return `Your randomly created password is ${password}.`;
@@ -151,3 +150,19 @@ function isPalyndrom(expression) {
 } 
 
 document.write(`Function No 10: ${isPalyndrom("kololok")} <br>`);
+
+
+// 11th function
+
+
+function deleteDublicateLetter(expression) {
+  let newExpression = '';
+  for (let i = 0; i < expression.length; i++) {
+    if (newExpression.indexOf(expression[i]) == -1) {
+    newExpression += expression[i];
+    }
+  }
+  return newExpression;
+}
+  
+document.write(`Function No 11: ${deleteDublicateLetter("kololok")} <br>`);
