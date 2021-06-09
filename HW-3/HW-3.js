@@ -154,15 +154,15 @@ document.write(`Function No 10: ${isPalyndrom("kololok")} <br>`);
 
 // 11th function
 
-
 function deleteDublicateLetter(expression) {
   let newExpression = '';
   for (let i = 0; i < expression.length; i++) {
-    if (newExpression.indexOf(expression[i]) == -1) {
+    if (expression.lastIndexOf(expression[i]) == expression.indexOf(expression[i])) {
     newExpression += expression[i];
     }
   }
   return newExpression;
 }
   
-document.write(`Function No 11: ${deleteDublicateLetter("kololok")} <br>`);
+document.write(`Function No 11: ${deleteDublicateLetter("bhbjhvkjvnlskcmlnb")} <br>`);
+
