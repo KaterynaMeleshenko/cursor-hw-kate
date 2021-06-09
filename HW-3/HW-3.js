@@ -1,10 +1,10 @@
 // 1st function
 
 function getMaxDigit(number) {
-  const stringFromNumbers = number.toString(); // перевожу число в строку
-  const split = stringFromNumbers.split('');   // разделяю строку на отдельные символы
-  const arrayNumbers = split.map(Number);      // перевожу символы в числа
-  const maxNumber = Math.max(...arrayNumbers); // массив превращаю в аргументы и ищу максимальное значение из
+  const stringFromNumbers = number.toString(); 
+  const split = stringFromNumbers.split('');   
+  const arrayNumbers = split.map(Number);      
+  const maxNumber = Math.max(...arrayNumbers);
   return `Maximum value among numbers "${number}" is number ${maxNumber}.`;
 }
  
@@ -15,21 +15,16 @@ document.write(`Function No 1: ${getMaxDigit(14354456464)} <br>`);
   
 function putNumberInPower(num, pow) {
   let result = 1;
-  if (pow > 0) {
-    for (let i = 1;  i <= pow; i++) {
-    result *= num;
-    }
-  }
-  else if (pow < 0) {
+  if (pow === 0) result = 1;
+  else {
     for (let i = 1;  i <= Math.abs(pow); i++) {
-    result =  (1 / num) * result;
+      if (pow > 0) result *= num;
+      else if (pow < 0) result =  (1 / num) * result;
     }
   }
-  else if (pow === 0) result = 1;
-
   return `Number ${num} in power ${pow} is equal to ${result}.`;
 }
-  
+
 document.write(`Function No 2: ${putNumberInPower(2, -3)} <br>`);
   
   
@@ -62,8 +57,6 @@ document.write(`Function No 4: ${calculateRevenue(650, 19.5)} <br>`);
 function getRandomNumber(n, m) {
   const maxNumber = Math.floor( Math.max(n, m) );
   const minNumber = Math.ceil( Math.min(n, m) );
-
-// 1 was dded in order to include both min and max
   const randomNumber = Math.random() * (maxNumber- minNumber + 1) + minNumber 
   return `Random number between ${minNumber} and ${maxNumber} is ${Math.trunc(randomNumber)}.`;
 }
@@ -134,22 +127,17 @@ document.write(`Function No 9: ${deleteLetter("o", "godprogrammer")} <br>`);
 
 // 10th function
 
-function isPalyndrom(expression) {
-  const newExpression = ( expression.toLowerCase().split(' ').join('') ).split('');
-    function reverse(newExpression) {
-    let array = [];
-    for (let i = 0; i <= newExpression.length-1; i++) {
-      array[i] = newExpression[(newExpression.length-1)-i];
-      }
-      return array;
-    }
-  if (newExpression.join('') == reverse(newExpression).join('')) {
-    return `The expression "${expression}" is a polyndrom.`; 
+function isPalindrome(expression) {
+  const newExpression = expression.toLowerCase().split(' ').join('');
+  const arrayFromExpression = newExpression.split('');
+  const reverseExpression = ((arrayFromExpression.reverse() ).join('') ).toString();
+  if (newExpression == reverseExpression) {
+    return `The expression "${expression}" is a palindrome.`; 
   }
-    return `The expression "${expression}" isn't a polyndrom.`; 
+    return `The expression "${expression}" isn't a palindrome.`; 
 } 
 
-document.write(`Function No 10: ${isPalyndrom("kololok")} <br>`);
+document.write(`Function No 10: ${isPalindrome("Dogma I am God")} <br>`);
 
 
 // 11th function
@@ -161,8 +149,7 @@ function deleteDublicateLetter(expression) {
     newExpression += expression[i];
     }
   }
-  return newExpression;
+  return `Non-dublicated letter(s) in the expression "${expression}" is (are) "${newExpression}".`;
 }
   
 document.write(`Function No 11: ${deleteDublicateLetter("bhbjhvkjvnlskcmlnb")} <br>`);
-
