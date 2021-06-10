@@ -42,13 +42,11 @@ document.write(`Function No 3: ${correctName('kaTya')} <br>`);
 
 // 4th function
 
-function calculateRevenue(salary, rate) {
-  const taxesCoefficient = (1 - rate / 100);
-  const revenue = + (salary * taxesCoefficient).toFixed(2);
+const calculateRevenue = (salary, rate) => {
   return `Total revenue from the salary in amount of ${salary} USD 
-          excluding taxes of ${rate}% rate is ${revenue} USD.`;
+         excluding taxes of ${rate}% rate is 
+         ${parseInt(salary * (1 - rate / 100)).toFixed(2)}`;
 }
-
 document.write(`Function No 4: ${calculateRevenue(650, 19.5)} <br>`);
 
 
