@@ -85,10 +85,10 @@ function convertCurrency(sum) {
   const sumTotal = sum.match(/\d+/g); // number pattern
   const sumTotalNumber = sumTotal.map(Number);
     if (sumSmall.indexOf('uah') >= 0) {
-      return `${sumTotalNumber} is equal to ${ + (sumTotalNumber / 27).toFixed(2) } USD.`;
+      return `${sumTotalNumber} UAH is equal to ${ + (sumTotalNumber / 27).toFixed(2) } USD.`;
     }
     else if (sumSmall.indexOf('$') >= 0) {
-      return `${sumTotalNumber} is equal to ${+ (sumTotalNumber *27).toFixed(2) } UAH.`;
+      return `${sumTotalNumber} USD is equal to ${+ (sumTotalNumber *27).toFixed(2) } UAH.`;
     }
   return "Please choose $ or UAH as a currency.";
 }
@@ -111,17 +111,12 @@ document.write(`Function No 8: ${getRandomPassword(6)} <br>`);
 
 // 9th function
 
-function deleteLetter(letter, word) {
-  const letterNumber = word.split(letter).length - 1;
-  let newWord = word;
-  for (let i = 1; i <= letterNumber; i++) {
-    const position = newWord.indexOf(letter);
-    newWord = newWord.slice(0, position) + newWord.slice(position + 1);
-  }
-  return `The word "${word}" without letter "${letter}" is "${newWord}".`;
+const deleteLetter = (letter, word) => {
+  return `The word "${word}" without letter "${letter}"
+          is "${word.split(letter).join('')}".`;
 }
 
-document.write(`Function No 9: ${deleteLetter("o", "godprogrammer")} <br>`);
+document.write(`Function No 9: ${deleteLetter("m", "godprogrammer")} <br>`);
 
 
 // 10th function
