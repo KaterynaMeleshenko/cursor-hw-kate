@@ -47,6 +47,7 @@ const calculateRevenue = (salary, rate) => {
          excluding taxes of ${rate}% rate is 
          ${parseInt(salary * (1 - rate / 100)).toFixed(2)}`;
 }
+
 document.write(`Function No 4: ${calculateRevenue(650, 19.5)} <br>`);
 
 
