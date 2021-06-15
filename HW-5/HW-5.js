@@ -1,14 +1,18 @@
-// function 1
+// function #1
 
 function getRandomArray(length, min, max) {
-    let randomArray = [];
-        for (let i = 0; i < length; i++) {
-            randomArray.push( Math.trunc(Math.random() * (max - min + 1) + min) )
-        }
-        return randomArray;
+  let randomArray = [];
+
+  for (let i = 0; i < length; i++) {
+    randomArray.push( Math.trunc(Math.random() * (max - min + 1) + min) )
+  }
+
+  return `Random array of ${length} elements with ${min} as a minimum
+  element and ${max} as a maximum element is [${randomArray}].`;
 }
 
-console.log(getRandomArray(8, 5, 20));
+//console.log(getRandomArray(8, 5, 20));
+document.write(`Function #1: ${getRandomArray(8, 5, 20)} <br>`);
 
 
 // // function 2
@@ -56,13 +60,100 @@ console.log(getRandomArray(8, 5, 20));
 
 // function 2 
 
-function getModa(...numbers) {
-   let numbersArray = Array.from(numbers);
-   let filteredArray = numbersArray.filter((number) => Number.isInteger(number) );
-   let repetition = [];
-   let result = filteredArray.forEach(number => repetition[number] ? repetition[number]++ : repetition[number] = 1);
-   return console.log(repetition);
+// function getModa(...numbers) {
+//    let numbersArray = Array.from(numbers);
+//    let filteredArray = numbersArray.filter((number) => Number.isInteger(number) );
+//    let repetition = [];
+//    let result = filteredArray.forEach(number => repetition[number] ? repetition[number]++ : repetition[number] = 1);
+//    return console.log(repetition);
 
+// }
+// console.log(getModa(1, 5, -3, 6, 5, 8.7, 9, 5, 6, 5));
+
+
+// function #3
+
+function getAverage(...numbers) {
+  const numbersArray = Array.from(numbers);
+  const filteredArray = numbersArray.filter(number => Number.isInteger(number));
+  let sum = 0;
+  
+  for (let i = 0; i < filteredArray.length; i++) {
+    sum = sum + filteredArray[i];
+  }
+     
+  return `Average element in the array [${numbersArray}] is 
+  ${+(sum / filteredArray.length).toFixed(2)}.`;
 }
-console.log(getModa(1, 5, -3, 6, 5, 8.7, 9, 5, 6, 5));
 
+//console.log(getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 6));
+document.write(`Function #3: ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 6)} <br>`); 
+
+
+// function #4
+  
+function getMedian(...numbers) {
+  const numbersArray = Array.from(numbers);
+  const filteredArray = numbersArray.filter((number) => Number.isInteger(number));
+  const sortedArray = filteredArray.sort((a, b) => a - b);
+  let median = null;
+  let index = null;
+    
+  if (sortedArray.length % 2 === 0 ) {
+    index = sortedArray.length / 2;
+    median = (sortedArray[index] + sortedArray[index + 1]) / 2;
+  } else {
+    index = Math.trunc(sortedArray.length / 2);
+    median = sortedArray[index];
+    }
+    
+  return `Median in the array[${numbersArray}] is ${median}. `;
+}
+
+//console.log(getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7));
+document.write(`Function #4: ${getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
+
+
+// function #5
+
+function filterEvenNumbers(...numbers) {
+  const numbersArray = Array.from(numbers);
+  const newArray = numbersArray.filter(number => number % 2 === 0);
+
+  return `New array of even numbers transformed from the attay [${numbersArray}] 
+  is [${newArray}].`;
+}
+
+//console.log(filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7));
+document.write(`Function #5: ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
+
+
+// function #6
+
+function countPositiveNumbers(...numbers) {
+  const numbersArray = Array.from(numbers);
+  let sum = null;
+
+  numbersArray.forEach(number => number > 0 ? sum += number : sum);
+
+  return `Sum of all positive elements in the array [${numbersArray}] is ${sum}.`;
+}
+
+//console.log(countPositiveNumbers(-5, 3, 7));
+document.write(`Function #6: ${countPositiveNumbers(-5, 3, 7)} <br>`); 
+
+
+// function #7
+
+function getDividedByFive(...numbers) {
+  const numbersArray = Array.from(numbers);
+  const newArray = numbersArray.filter((number) => number % 5 === 0);
+
+  return `New array of numbers divided by 5 from the array [${numbersArray}] is [${newArray}].`;
+}
+
+//console.log(getDividedByFive(-5, 10, 3, 7, 20));
+document.write(`Function #7: ${getDividedByFive(-5, 10, 0, 3, 7, 20)} <br>`); 
+
+
+// function #8

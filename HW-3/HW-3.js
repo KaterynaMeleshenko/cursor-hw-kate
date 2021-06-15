@@ -22,7 +22,7 @@ function putNumberInPower(num, pow) {
   } else {
     for (let i = 1;  i <= Math.abs(pow); i++) {
       if (pow > 0) {
-      result *= num;
+        result *= num;
       } else if (pow < 0) {
         result =  (1 / num) * result;
       }
@@ -51,10 +51,9 @@ document.write(`Function No 3: ${correctName('kaTya')} <br>`);
 // 4th function
 
 const calculateRevenue = (salary, rate) => {
-
   return `Total 
-  revenue from the salary in amount of ${salary} USD 
-  excluding taxes of ${rate}% rate is 
+    revenue from the salary in amount of ${salary} USD 
+    excluding taxes of ${rate}% rate is 
   ${ Math.trunc( salary * (1 - rate / 100) ) }`;
 }
 
@@ -131,8 +130,8 @@ document.write(`Function No 8: ${getRandomPassword(6)} <br>`);
 
 const deleteLetter = (letter, word) => {
   return `The word 
-  "${word}" without letter "${letter}"
-  is "${word.replaceAll(letter, "")}".`;
+    "${word}" without letter "${letter}"
+    is "${word.replaceAll(letter, "")}".`;
 }
 
 document.write(`Function No 9: ${deleteLetter("m", "godprogrammer")} <br>`);
@@ -161,7 +160,7 @@ function deleteDublicateLetter(expression) {
 
   for (let i = 0; i < expression.length; i++) {
     if (expression.lastIndexOf(expression[i]) === expression.indexOf(expression[i])) {
-    newExpression += expression[i];
+      newExpression += expression[i];
     }
   }
 
