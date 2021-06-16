@@ -15,60 +15,40 @@ function getRandomArray(length, min, max) {
 document.write(`Function #1: ${getRandomArray(8, 5, 20)} <br>`);
 
 
-// // function 2
-
-// function getModa(...numbers) {
-//     let numbersArray = Array.from(numbers);
-//     let repeatedNumbers = [];
-//     for (let i = 0; i < numbersArray.length; i++) {
-//         if (numbersArray[i].isInteger && la)
-//     }
-//     return console.log(numbersArray);
-
-// }
-
-// console.log(getModa(1, 2, 3))
-
-
 // function 2
 
-// function getModa(...numbers) {
-//     let numbersArray = Array.from(numbers);
-//     const sortedArray = numbersArray.sort((a, b) => a - b);
-//     console.log(sortedArray);
-//     for (let i = 0; i < sortedArray.length; i++) {
-//         let count = 1;
-//         let newArray = [];
-//             if (sortedArray[i] == sortedArray[i + 1] && sortedArray[i + 1] !== sortedArray[i + 2]) {
-//                 count += 1;
-//                 newArray.push([i, count]);
-//                 console.log(i, count, sortedArray[i]);
-//             } else if 
-//               (sortedArray[i] == sortedArray[i + 1] && sortedArray[i + 1] !== sortedArray[i + 2]) {
-//                 count += 1;
-//                 newArray.push([i, count]);
-//                 console.log(i, count, sortedArray[i]);
-            
-//             else if (sortedArray[i] < sortedArray[i + 1]) {
-//                 continue;
-//             }
-//         //return newArray;
-//     }
+function getModa(...numbers) {
+  const numbersArray = Array.from(numbers).sort();
+  const filteredArray = numbersArray.filter(number => Number.isInteger(number))  
+  let allModes = [];
+  let firstModeFrequency = 1;
+  let i = 0;
 
-// }
-// console.log(getModa(1, 5, -3, 6, 5, 8, 9, 5, 6, 5));
+  while (i < filteredArray.length){
+    if (filteredArray[i] === filteredArray[i+1]) {
+      let modeFrequency = filteredArray.lastIndexOf(filteredArray[i]) - filteredArray.indexOf(numbersArray[i]);
+      
+      if (modeFrequency >= firstModeFrequency) {
+        firstModeFrequency = modeFrequency;
+        allModes.push(filteredArray[i])
+        i++;
+      }             
+    } else{
+      i++
+    }    
+  }
+      
+  for (i = 0; i < allModes.length; i++) {
+    if (allModes[i] == allModes[i+1]) {
+      allModes.splice(i+1);
+    }
+  }
 
-// function 2 
-
-// function getModa(...numbers) {
-//    let numbersArray = Array.from(numbers);
-//    let filteredArray = numbersArray.filter((number) => Number.isInteger(number) );
-//    let repetition = [];
-//    let result = filteredArray.forEach(number => repetition[number] ? repetition[number]++ : repetition[number] = 1);
-//    return console.log(repetition);
-
-// }
-// console.log(getModa(1, 5, -3, 6, 5, 8.7, 9, 5, 6, 5));
+  return `Mode(s) of the numbers [${numbers}] is(are) ${allModes}.`;
+}
+     
+//console.log(getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2));
+document.write(`Function #2: ${getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2)} <br>`); 
 
 
 // function #3
