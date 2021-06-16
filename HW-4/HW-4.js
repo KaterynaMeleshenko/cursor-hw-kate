@@ -13,22 +13,27 @@ function getPairs(students) {
   return allPairs;
 }
 
+const pairsOfStudents = getPairs(students);
+
 console.log(getPairs(students));
+
 
 
 // Task #2: Themes
 
-function setThemes(students, themes) {
+function setThemes(themes) {
   const allThemes = [];
 
   for (let i = 0; i < themes.length; i++) {
-    allThemes.push([getPairs(students)[i].join(' and '), themes[i]])
+    allThemes.push([pairsOfStudents[i].join(' and '), themes[i]])
   }
 
   return allThemes;
 }
 
-console.log(setThemes(students, themes));
+const studentsWithThemes = setThemes(themes);
+
+console.log(setThemes(themes));
 
 
 // Task #3: Marks
@@ -48,16 +53,18 @@ console.log(setMarks(students, marks));
 
 // Task #4: Random mark for each pair
 
-function setRandomMarks(students, themes) {
+function setRandomMarks() {
   const randomMarks = [];
 
-  for (let i = 0; i < setThemes(students, themes).length; i++) {
-    const mark = Math.trunc(Math.random()*(5-1+1)+1);
+  for (let i = 0; i < studentsWithThemes.length; i++) {
+    const mark = (maxMark, minMark) => {
+      return Math.trunc(Math.random()*(maxMark - minMark + 1) + minMark);
+    }
 
-    randomMarks.push([setThemes(students, themes)[i].concat(mark)]);
+  randomMarks.push([...studentsWithThemes[i], mark(5, 1)]);
   }
 
   return randomMarks;
 }
 
-console.log(setRandomMarks(students, themes));
+console.log(setRandomMarks());

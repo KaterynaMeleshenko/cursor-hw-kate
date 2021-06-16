@@ -86,8 +86,8 @@ function getAverage(...numbers) {
     ${+(sum / filteredArray.length).toFixed(2)}.`;
 }
 
-//console.log(getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 6));
-document.write(`Function #3: ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 6)} <br>`); 
+//console.log(getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 7, 6));
+document.write(`Function #3: ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6)} <br>`); 
 
 
 // function #4
@@ -178,7 +178,7 @@ function replaceBadWords(string) {
   document.write(`Function #8: ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
 
 
- //function #9
+// function #9
 
 function divideByThree(word) {
   const syllables =[];
@@ -194,3 +194,13 @@ function divideByThree(word) {
   
   //console.log(divideByThree('abrakadabra')); 
   document.write(`Function #9: ${divideByThree('abrakadabra')} <br>`);
+
+
+// function #10
+
+function generateCombinations(word) {
+  const letters = word.split('');
+  return letters;
+}
+
+console.log(generateCombinations('word'));
