@@ -174,8 +174,8 @@ function replaceBadWords(string) {
   return `Polite version of the "${string}" is "${changedExpression.join(' ')}"`;
   }
   
-  //console.log(replaceBadWords('You are fucking stupid bullshit!'));
-  document.write(`Function #8: ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
+//console.log(replaceBadWords('You are fucking stupid bullshit!'));
+document.write(`Function #8: ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
 
 
 // function #9
@@ -192,15 +192,40 @@ function divideByThree(word) {
   return `Three letters syllables of the word "${word}" are [${syllables}].`;
 }
   
-  //console.log(divideByThree('abrakadabra')); 
-  document.write(`Function #9: ${divideByThree('abrakadabra')} <br>`);
+//console.log(divideByThree('abrakadabra')); 
+document.write(`Function #9: ${divideByThree('abrakadabra')} <br>`);
 
 
 // function #10
 
 function generateCombinations(word) {
+  
+  function recursion(word) {
   const letters = word.split('');
-  return letters;
-}
+  let combinations = [];
+     
+  if (letters.length === 0) return "not exist";
+  if (letters.length === 1) return letters.join(' ');
+  if (letters.length > 10) return "unable to be counted";
+    
+  for (let i = 0; i < letters.length; i++) {
+    const firstLetter = letters[i];
+    const restLetters = letters.slice(0, i).concat(letters.slice(i + 1));
+    const restLettersCombinations = recursion(restLetters.join(''));
+       
+  for (let j = 0; j < restLettersCombinations.length; j++) {
+    const combinationArray = [firstLetter].concat(restLettersCombinations[j]);
+    let newWord = combinationArray.join('')
+    if ( combinations.includes(newWord) ) continue;
+    else combinations.push(newWord);
+      } 
+  }
+   
+  return combinations;
+ }
 
-console.log(generateCombinations('word'));
+return `The set of combinations from the letters contained in the word "${word}" is ${recursion(word)}.`
+}
+   
+//console.log(generateCombinations("word"));
+document.write(`Function #10: ${generateCombinations('wood')} <br>`);
