@@ -8,7 +8,7 @@ function getRandomArray(length, min, max) {
   }
 
   return `Random array of ${length} elements with ${min} as a minimum
-  element and ${max} as a maximum element is [${randomArray}].`;
+    element and ${max} as a maximum element is [${randomArray}].`;
 }
 
 //console.log(getRandomArray(8, 5, 20));
@@ -83,7 +83,7 @@ function getAverage(...numbers) {
   }
      
   return `Average element in the array [${numbersArray}] is 
-  ${+(sum / filteredArray.length).toFixed(2)}.`;
+    ${+(sum / filteredArray.length).toFixed(2)}.`;
 }
 
 //console.log(getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 6));
@@ -121,7 +121,7 @@ function filterEvenNumbers(...numbers) {
   const newArray = numbersArray.filter(number => number % 2 === 0);
 
   return `New array of even numbers transformed from the attay [${numbersArray}] 
-  is [${newArray}].`;
+    is [${newArray}].`;
 }
 
 //console.log(filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7));
@@ -155,5 +155,42 @@ function getDividedByFive(...numbers) {
 //console.log(getDividedByFive(-5, 10, 3, 7, 20));
 document.write(`Function #7: ${getDividedByFive(-5, 10, 0, 3, 7, 20)} <br>`); 
 
-
+    
 // function #8
+  
+function replaceBadWords(string) {
+  const expressionArray = string.split(' ');
+  const badWordsArray = ['fuck', 'shit'];
+  const changedExpression = [].concat(expressionArray);
+    
+  expressionArray.forEach( (word, index) => {
+    for (let i = 0; i < badWordsArray.length; i++) {
+      if ( (word.toString()).includes(badWordsArray[i]) ) {
+        changedExpression[index] = (word.toString()).replace(badWordsArray[i], '****')
+      }   
+    }
+  })
+    
+  return `Polite version of the "${string}" is "${changedExpression.join(' ')}"`;
+  }
+  
+  //console.log(replaceBadWords('You are fucking stupid bullshit!'));
+  document.write(`Function #8: ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
+
+
+ //function #9
+
+function divideByThree(word) {
+  const syllables =[];
+  
+  for (let i = 0; i< word.length; i +=3) {
+    let oneSyllable = word.slice(i, i+3);
+    
+    syllables.push(oneSyllable);
+    }
+  
+  return `Three letters syllables of the word "${word}" are [${syllables}].`;
+}
+  
+  //console.log(divideByThree('abrakadabra')); 
+  document.write(`Function #9: ${divideByThree('abrakadabra')} <br>`);
