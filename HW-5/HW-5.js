@@ -11,7 +11,6 @@ function getRandomArray(length, min, max) {
     element and ${max} as a maximum element is [${randomArray}].`;
 }
 
-//console.log(getRandomArray(8, 5, 20));
 document.write(`Function #1: ${getRandomArray(8, 5, 20)} <br>`);
 
 
@@ -34,8 +33,9 @@ function getModa(...numbers) {
         i++;
       }             
     } else{
-      i++
-    }    
+      i++;
+    }  
+    i++;  
   }
       
   for (i = 0; i < allModes.length; i++) {
@@ -47,7 +47,6 @@ function getModa(...numbers) {
   return `Mode(s) of the numbers [${numbers}] is(are) ${allModes}.`;
 }
      
-//console.log(getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2));
 document.write(`Function #2: ${getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2)} <br>`); 
 
 
@@ -66,7 +65,6 @@ function getAverage(...numbers) {
     ${+(sum / filteredArray.length).toFixed(2)}.`;
 }
 
-//console.log(getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 5, 7, 6));
 document.write(`Function #3: ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6)} <br>`); 
 
 
@@ -90,7 +88,6 @@ function getMedian(...numbers) {
   return `Median in the array[${numbersArray}] is ${median}. `;
 }
 
-//console.log(getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7));
 document.write(`Function #4: ${getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
 
 
@@ -104,7 +101,6 @@ function filterEvenNumbers(...numbers) {
     is [${newArray}].`;
 }
 
-//console.log(filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7));
 document.write(`Function #5: ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
 
 
@@ -112,15 +108,14 @@ document.write(`Function #5: ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 
 
 function countPositiveNumbers(...numbers) {
   const numbersArray = Array.from(numbers);
-  let sum = null;
+  let sum = 0;
 
-  numbersArray.forEach(number => number > 0 ? sum += number : sum);
+  numbersArray.forEach(number => number > 0 ? sum++ : sum);
 
-  return `Sum of all positive elements in the array [${numbersArray}] is ${sum}.`;
+  return `The quantity of all positive elements in the array [${numbersArray}] is ${sum}.`;
 }
 
-//console.log(countPositiveNumbers(-5, 3, 7));
-document.write(`Function #6: ${countPositiveNumbers(-5, 3, 7)} <br>`); 
+document.write(`Function #6: ${countPositiveNumbers(4, 0, -5, 3, 7)} <br>`); 
 
 
 // function #7
@@ -132,7 +127,6 @@ function getDividedByFive(...numbers) {
   return `New array of numbers divided by 5 from the array [${numbersArray}] is [${newArray}].`;
 }
 
-//console.log(getDividedByFive(-5, 10, 3, 7, 20));
 document.write(`Function #7: ${getDividedByFive(-5, 10, 0, 3, 7, 20)} <br>`); 
 
     
@@ -154,7 +148,6 @@ function replaceBadWords(string) {
   return `Polite version of the "${string}" is "${changedExpression.join(' ')}"`;
   }
   
-//console.log(replaceBadWords('You are fucking stupid bullshit!'));
 document.write(`Function #8: ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
 
 
@@ -172,7 +165,6 @@ function divideByThree(word) {
   return `Three letters syllables of the word "${word}" are [${syllables}].`;
 }
   
-//console.log(divideByThree('abrakadabra')); 
 document.write(`Function #9: ${divideByThree('abrakadabra')} <br>`);
 
 
@@ -207,5 +199,4 @@ function generateCombinations(word) {
 return `The set of combinations from the letters contained in the word "${word}" is ${recursion(word)}.`
 }
    
-//console.log(generateCombinations("word"));
 document.write(`Function #10: ${generateCombinations('wood')} <br>`);
