@@ -106,7 +106,7 @@ function getStudentsNames(array) {
   return names.sort();
 }
 
-console.log(`Studens' names in althabet order are ${getStudentsNames(students)}.`);
+console.log(`Studens' names in alphabet order are ${getStudentsNames(students)}.`);
   
 
 // Function #5
@@ -148,7 +148,7 @@ function calculateWordLetters(word) {
         letterQuantity += 1; 
       }
     }
-    
+
     letterObject[letter] = letterQuantity;
     Object.assign(wordObject, letterObject);
   })
