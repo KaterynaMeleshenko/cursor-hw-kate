@@ -55,43 +55,26 @@ console.log(`Total taxes from IT specialists in Litva are ${result_3} USD.`);
 
 // Function #4
 
-function getMySalary(country) {
-  function countryInfo(country) {
-  const salary = + (Math.random() * 501 + 1500).toFixed(2);
-  const taxes = country.tax;
-  let countryInformation = {
-      salary: salary,
-      taxes: taxes,
-      profit: + ( salary * (1 - taxes) ).toFixed(2),
-      }
-
-  return console.log(countryInformation);
- }
-  countryInfo(country);
+function getMySalary() {
   let i = 0; 
-  do {
-      setTimeout(countryInfo, 3000, country);
-      i++;
-  } while (i < 10);
   
+  do {
+    const salary = + (Math.random() * 501 + 1500).toFixed(2);
+    const taxes = this.tax;
+    const profit = + ( salary * (1 - taxes) ).toFixed(2);
+        
+    setTimeout(function() {
+      const countryInformation = {
+        salary: salary,
+        taxes: taxes,
+        profit: profit,
+        }
+          
+      return console.log(countryInformation);
+    }, 10000 * i);
+
+    i++;
+    } while (i < 10); 
 }
 
-getMySalary(litva);
-
-// function getMySalary(country) {
-//     for (let i = 0; i < 10; i++) {
-//     setTimeout( function() {
-//         const salary = + (Math.random() * 501 + 1500).toFixed(2);
-//         const taxes = country.tax;
-//         let countryInfo = {
-//             salary: salary,
-//             taxes: taxes,
-//             profit: + ( salary * (1 - taxes) ).toFixed(2),
-//             }
-  
-//     return console.log(countryInfo);
-//     }, 10000, country)
-//   }
-// }
-//   getMySalary(litva);
-  
+getMySalary.call(litva);
