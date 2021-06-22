@@ -40,7 +40,7 @@ function getSubjects(student) {
   return newSubjectsArray;
   }         
   
-  console.log(`The subjects are ${getSubjects(students[0])}.`)
+console.log(`The subjects are ${getSubjects(students[0])}.`)
   
    
  // Function #2 
@@ -157,9 +157,3 @@ function calculateWordLetters(word) {
 }
 
 console.log(calculateWordLetters("test"));
-
-
-
-
-
-
