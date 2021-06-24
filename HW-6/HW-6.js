@@ -136,24 +136,14 @@ console.log(`The best student(s) is(are) ${getBestStudent(students)}.`);
 // Function #6
 
 function calculateWordLetters(word) {
-  const arrayFromWord = word.split('');
-  let wordObject = {};
+    const arrayFromWord = word.split('');
+    let wordObject = {};
+    
+    arrayFromWord.forEach(letter => {
+        wordObject[letter] = wordObject[letter] + 1 || 1;
+    })
+    
+    return wordObject;
+  }
   
-  arrayFromWord.forEach(letter => {
-    let letterQuantity = 0;
-    let letterObject = {};
-
-    for (let i = 0; i < arrayFromWord.length; i++) {
-      if (arrayFromWord[i] === letter) {
-        letterQuantity += 1; 
-      }
-    }
-
-    letterObject[letter] = letterQuantity;
-    Object.assign(wordObject, letterObject);
-  })
-  
-  return wordObject;
-}
-
-console.log(calculateWordLetters("test"));
+  console.log(calculateWordLetters("test"));
