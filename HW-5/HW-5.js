@@ -1,79 +1,60 @@
 // function #1
 
-function getRandomArray(length, min, max) {
-  let randomArray = [];
-
-  for (let i = 0; i < length; i++) {
-    randomArray.push( Math.trunc(Math.random() * (max - min + 1) + min) )
-  }
-
-  return `Random array of ${length} elements with ${min} as a minimum
-    element and ${max} as a maximum element is [${randomArray}].`;
+const getRandomNumber = (min, max) => {
+  return Math.trunc(Math.random() * (max - min + 1) + min);
 }
 
-document.write(`Function #1: ${getRandomArray(8, 5, 20)} <br>`);
+const getRandomArray  = (length, min, max) => {
+  return new Array(length).fill(null).map(el => getRandomNumber(min, max) )
+}
+
+document.write(`Function #1: A random array is [${getRandomArray(8, 5, 20)}] <br>`);
 
 
 // function 2
 
-function getModa(...numbers) {
-  const numbersArray = Array.from(numbers).sort();
-  const filteredArray = numbersArray.filter(number => Number.isInteger(number))  
-  let allModes = [];
-  let firstModeFrequency = 1;
-  let i = 0;
+const getModa = (...numbers) => {
+  const objectValues = {};
 
-  while (i < filteredArray.length){
-    if (filteredArray[i] === filteredArray[i+1]) {
-      let modeFrequency = filteredArray.lastIndexOf(filteredArray[i]) - filteredArray.indexOf(numbersArray[i]);
-      
-      if (modeFrequency >= firstModeFrequency) {
-        firstModeFrequency = modeFrequency;
-        allModes.push(filteredArray[i])
-        i++;
-      }             
-    } else{
-      i++;
-    }  
-    i++;  
-  }
-      
-  for (i = 0; i < allModes.length; i++) {
-    if (allModes[i] == allModes[i+1]) {
-      allModes.splice(i+1);
+  numbers.forEach(item => {
+    objectValues[item] = objectValues[item] + 1 || 1;
+  })
+
+  let moda = [];
+  let countDigits = 1;
+
+  for (let key in objectValues) {
+    if (objectValues[key] > countDigits) {
+      moda = [key];
+      countDigits = objectValues[key];
+    } else if (objectValues[key] === countDigits) {
+      moda.push(key);
     }
   }
 
-  return `Mode(s) of the numbers [${numbers}] is(are) ${allModes}.`;
+  return moda;
 }
      
-document.write(`Function #2: ${getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2)} <br>`); 
+document.write(`Function #2: Mode is/are ${getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2, 3)} <br>`); 
 
 
 // function #3
 
-function getAverage(...numbers) {
-  const numbersArray = Array.from(numbers);
-  const filteredArray = numbersArray.filter(number => Number.isInteger(number));
-  let sum = 0;
-  
-  for (let i = 0; i < filteredArray.length; i++) {
-    sum = sum + filteredArray[i];
-  }
-     
-  return `Average element in the array [${numbersArray}] is 
-    ${+(sum / filteredArray.length).toFixed(2)}.`;
+const getAverage = (...numbers) => {
+  const integerNumbers = numbers.filter(el => Number.isInteger(el))
+  const sumNumbers = integerNumbers.reduce((acc, el) => acc + el)
+
+  return +(sumNumbers / integerNumbers.length).toFixed(2);
 }
 
-document.write(`Function #3: ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6)} <br>`); 
+document.write(`Function #3: Average is ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6)} <br>`); 
 
 
 // function #4
   
 function getMedian(...numbers) {
-  const numbersArray = Array.from(numbers);
-  const filteredArray = numbersArray.filter((number) => Number.isInteger(number));
-  const sortedArray = filteredArray.sort((a, b) => a - b);
+  const integerNumbers = numbers.filter((number) => Number.isInteger(number));
+  const sortedArray = integerNumbers.sort((a, b) => a - b);
   let median = null;
   let index = null;
     
@@ -85,70 +66,61 @@ function getMedian(...numbers) {
     median = sortedArray[index];
     }
     
-  return `Median in the array[${numbersArray}] is ${median}. `;
+  return median;
 }
 
-document.write(`Function #4: ${getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
+document.write(`Function #4: Median is ${getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
 
 
 // function #5
 
 function filterEvenNumbers(...numbers) {
-  const numbersArray = Array.from(numbers);
-  const newArray = numbersArray.filter(number => number % 2 === 0);
+  const oddNumbers = numbers.filter(number => number % 2 !== 0);
 
-  return `New array of even numbers transformed from the attay [${numbersArray}] 
-    is [${newArray}].`;
+  return oddNumbers;
 }
 
-document.write(`Function #5: ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
+document.write(`Function #5: Odd numbers are ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
 
 
 // function #6
 
 function countPositiveNumbers(...numbers) {
-  const numbersArray = Array.from(numbers);
-  let sum = 0;
+  const positiveNumbers = numbers.filter((number) => number > 0)
 
-  numbersArray.forEach(number => number > 0 ? sum++ : sum);
-
-  return `The quantity of all positive elements in the array [${numbersArray}] is ${sum}.`;
+  return positiveNumbers.length; 
 }
 
-document.write(`Function #6: ${countPositiveNumbers(4, 0, -5, 3, 7)} <br>`); 
+document.write(`Function #6: Quantity of positive numbers is ${countPositiveNumbers(4, 0, -5, 3, 7)} <br>`); 
 
 
 // function #7
 
 function getDividedByFive(...numbers) {
-  const numbersArray = Array.from(numbers);
-  const newArray = numbersArray.filter((number) => number % 5 === 0);
+  const numbersDividedByFive = numbers.filter((number) => number % 5 === 0);
 
-  return `New array of numbers divided by 5 from the array [${numbersArray}] is [${newArray}].`;
+  return numbersDividedByFive;
 }
 
-document.write(`Function #7: ${getDividedByFive(-5, 10, 0, 3, 7, 20)} <br>`); 
+document.write(`Function #7: Numbers divided to five are ${getDividedByFive(-5, 10, 0, 3, 7, 20)} <br>`); 
 
     
 // function #8
   
-function replaceBadWords(string) {
-  const expressionArray = string.split(' ');
-  const badWordsArray = ['fuck', 'shit'];
-  const changedExpression = [].concat(expressionArray);
-    
-  expressionArray.forEach( (word, index) => {
-    for (let i = 0; i < badWordsArray.length; i++) {
-      if ( (word.toString()).includes(badWordsArray[i]) ) {
-        changedExpression[index] = (word.toString()).replace(badWordsArray[i], '****')
-      }   
-    }
-  })
-    
-  return `Polite version of the "${string}" is "${changedExpression.join(' ')}"`;
+const replaceBadWords = sentence => {
+  const badWords = ['shit', 'fuck'];
+  let formattedSentence = sentence;
+
+  for (let i = 0; i < badWords.length; i++) {
+    formattedSentence = formattedSentence.replaceAll(
+      badWords[i], '*'.repeat(badWords[i].length)
+    );
   }
+
+  return formattedSentence;
+}
   
-document.write(`Function #8: ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
+document.write(`Function #8: Polite phrase is ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
 
 
 // function #9
@@ -162,10 +134,10 @@ function divideByThree(word) {
     syllables.push(oneSyllable);
     }
   
-  return `Three letters syllables of the word "${word}" are [${syllables}].`;
+  return syllables;
 }
   
-document.write(`Function #9: ${divideByThree('abrakadabra')} <br>`);
+document.write(`Function #9: Syllables are ${divideByThree('abrakadabra')} <br>`);
 
 
 // function #10
@@ -196,7 +168,7 @@ function generateCombinations(word) {
   return combinations;
  }
 
-return `The set of combinations from the letters contained in the word "${word}" is ${recursion(word)}.`
+return recursion(word);
 }
    
-document.write(`Function #10: ${generateCombinations('wood')} <br>`);
+document.write(`Function #10: The set of combinations is ${generateCombinations('wood')} <br>`);
