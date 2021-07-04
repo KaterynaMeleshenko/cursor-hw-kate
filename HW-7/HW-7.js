@@ -22,9 +22,9 @@ function getMyTaxes(salary) {
   return + myTax.toFixed(2);
 }
 
-const result_1 = getMyTaxes.call(latvia, 4000);
+const getMyTaxesResult = getMyTaxes.call(latvia, 4000);
 
-console.log(`My taxes from 4000 USD would be ${result_1} USD in Latvia.`);
+console.log(`My taxes from 4000 USD would be ${getMyTaxesResult} USD in Latvia.`);
 
 
 // Function #2
@@ -35,9 +35,9 @@ function getMiddleTaxes() {
   return + middleTaxes.toFixed(2);
 }
 
-const result_2 = getMiddleTaxes.call(ukraine);
+const getMiddleTaxesResult = getMiddleTaxes.call(ukraine);
 
-console.log(`Middle taxes for IT specialists in Ukraine are ${result_2} USD.`);
+console.log(`Middle taxes for IT specialists in Ukraine are ${getMiddleTaxesResult} USD.`);
 
 
 // Function #3
@@ -48,33 +48,28 @@ function getTotalTaxes() {
   return + totalTaxes.toFixed(2);
 }
   
-const result_3 = getTotalTaxes.call(litva);
+const getTotalTaxesResult = getTotalTaxes.call(litva);
   
-console.log(`Total taxes from IT specialists in Litva are ${result_3} USD.`);
+console.log(`Total taxes from IT specialists in Litva are ${getTotalTaxesResult} USD.`);
 
 
 // Function #4
 
 function getMySalary() {
-  let i = 0; 
-  
-  do {
-    const salary = + (Math.random() * 501 + 1500).toFixed(2);
-    const taxes = this.tax;
-    const profit = + ( salary * (1 - taxes) ).toFixed(2);
-        
-    setTimeout(function() {
-      const countryInformation = {
-        salary: salary,
-        taxes: taxes,
-        profit: profit,
-        }
-          
-      return console.log(countryInformation);
-    }, 10000 * i);
+  const salaryInfo = () => {
+  const salary = + (Math.random() * 501 + 1500).toFixed(2);
+  const taxes = this.tax;
+  const profit = + ( salary * (1 - taxes) ).toFixed(2);
+  const countryInformation = {
+    salary: salary,
+    taxes: taxes,
+    profit: profit,
+  }
 
-    i++;
-    } while (i < 10); 
+  return console.log(countryInformation);  
+}     
+  setInterval(salaryInfo, 1000);
+
 }
 
 getMySalary.call(litva);
