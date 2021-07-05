@@ -6,7 +6,6 @@ document.body.innerHTML = `<div id="blocks" style="display: flex; flex-wrap: wra
   width: ${rows * 50}px; margin: auto"></div>`
 const area = document.getElementById('blocks'); 
 
-
 const randomColor = () => {
   const firstRandomNumber = Math.trunc( (Math.random() * 256) );
   const secondRandomNumber = Math.trunc( (Math.random() * 256) );
