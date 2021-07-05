@@ -1,7 +1,9 @@
 // BASIC
+const squares = prompt('Please type the required number of squares');
+const rows = Math.ceil( Math.sqrt(squares) );
 
 document.body.innerHTML = `<div id="blocks" style="display: flex; flex-wrap: wrap; 
-  width: 250px; margin: auto"></div>`
+  width: ${rows * 50}px; margin: auto"></div>`
 const area = document.getElementById('blocks'); 
 
 
@@ -13,10 +15,10 @@ const randomColor = () => {
   return `rgb(${firstRandomNumber}, ${secondRandomNumber}, ${thirdRandomNumber})`;
 }
 
-function generateBlocks() {
-  area.insertAdjacentHTML('afterbegin', '<div style="width: 250px; height:100px">BASIC TASK RESULT</div>');
+function generateBlocks(squares) {
+  area.insertAdjacentHTML('afterbegin', `<div style="width: ${rows * 50}px; height:100px">BASIC TASK RESULT</div>`);
 
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < squares; i++) {
     const blockInfo = `<div class="fixedBlock" style="width: 50px; height: 50px; background-color: 
       ${randomColor()}"></div>`;
 
@@ -24,13 +26,13 @@ function generateBlocks() {
     }
 }
 
-generateBlocks();
+generateBlocks(squares);
 
 
 // ADVANCED 
 
-function generateBlocksInterval() {
-  for (let i = 0; i < 25; i++) {
+function generateBlocksInterval(squares) {
+  for (let i = 0; i < squares; i++) {
     const blockInfo = `<div class="changableBlock" style="width: 50px; height: 50px;"></div>`;
     area.insertAdjacentHTML('beforeend', blockInfo);
     let newBlock = Array.from(document.getElementsByClassName('changableBlock'));
@@ -42,7 +44,7 @@ function generateBlocksInterval() {
     }, 1000);
   }
 
-  area.insertAdjacentHTML('beforeend', '<div style="width: 250px; height:100px">ADVANCED TASK RESULT</div>');
+  area.insertAdjacentHTML('beforeend', `<div style="width: ${rows * 50}px; height:100px">ADVANCED TASK RESULT</div>`);
 }
 
-generateBlocksInterval();
+generateBlocksInterval(squares);
