@@ -1,19 +1,26 @@
-// // BASIC
-document.body.innerHTML = '<div id="fixedBlocks"></div>'
+// BASIC
 
-const setFixedColors = () => {
-    let randomColorsNumber = () => {
-        const randomNumber = Math.trunc( (Math.random() * 256) );
-        return randomNumber;
-    }
-    return `rgb(${randomColorsNumber()}, ${randomColorsNumber()}, ${randomColorsNumber()})`;
+document.body.innerHTML = `<div id="blocks" style="display: flex; flex-wrap: wrap; 
+  width: 250px; margin: auto"></div>`
+const area = document.getElementById('blocks'); 
+
+
+const randomColor = () => {
+  const firstRandomNumber = Math.trunc( (Math.random() * 256) );
+  const secondRandomNumber = Math.trunc( (Math.random() * 256) );
+  const thirdRandomNumber = Math.trunc( (Math.random() * 256) );
+  
+  return `rgb(${firstRandomNumber}, ${secondRandomNumber}, ${thirdRandomNumber})`;
 }
 
 function generateBlocks() {
-    for (let i = 0; i < 25; i++) {
-        const blockInfo = '<span class="fixedBlock" style="padding: 50px 50px; background-color:' + setFixedColors() + '"><span>';
-        const area = document.getElementById('fixedBlocks');
-        area.insertAdjacentHTML('afterend', blockInfo);     
+  area.insertAdjacentHTML('afterbegin', '<div style="width: 250px; height:100px">BASIC TASK RESULT</div>');
+
+  for (let i = 0; i < 25; i++) {
+    const blockInfo = `<div class="fixedBlock" style="width: 50px; height: 50px; background-color: 
+      ${randomColor()}"></div>`;
+
+    area.insertAdjacentHTML('afterbegin', blockInfo);   
     }
 }
 
@@ -21,21 +28,21 @@ generateBlocks();
 
 
 // ADVANCED 
-// document.body.innerHTML = '<div id="changableBlocks"></div>'
 
-// const setChangableColors = () => {
+function generateBlocksInterval() {
+  for (let i = 0; i < 25; i++) {
+    const blockInfo = `<div class="changableBlock" style="width: 50px; height: 50px;"></div>`;
+    area.insertAdjacentHTML('beforeend', blockInfo);
+    let newBlock = Array.from(document.getElementsByClassName('changableBlock'));
     
-// setInterval(() => setFixedColors, 1000);
+    setInterval(() => {
+      newBlock.forEach (block => {
+      block.style.backgroundColor = randomColor();
+      })
+    }, 1000);
+  }
 
-// }
+  area.insertAdjacentHTML('beforeend', '<div style="width: 250px; height:100px">ADVANCED TASK RESULT</div>');
+}
 
-// console.log(setChangableColors());
-// // function generateBlocksInterval() {
-// //     for (let i = 0; i < 25; i++) {
-// //         const blockInfo = '<span class="changableBlock" style="margin: 1px; padding: 50px 50px; border: solid black; background-color:' + setChangableColors() + '"><span>';
-// //         const area = document.getElementById('changableBlocks');
-// //         area.insertAdjacentHTML('afterend', blockInfo);     
-// //     }
-// // }
-
-// //generateBlocksInterval();
+generateBlocksInterval();
