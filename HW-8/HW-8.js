@@ -2,16 +2,16 @@
 
 // 1
 class Student {
-  constructor(university, course, fullName, allMarks, status) {
+  constructor(university, course, fullName, allMarks, isStillStudent) {
     this.university = university;
     this.course = course;
     this.fullName = fullName;
     this.allMarks = allMarks;
-    this.status = status;
+    this.isStillStudent = isStillStudent;
   }
 
   getInfo() {
-     if (this.status === true) {
+     if (this.isStillStudent) {
      return `Student of the ${this.course} course of ${this.university}, ${this.fullName}`;
      } else {
          return "This student is not studying here anymore";
@@ -19,7 +19,7 @@ class Student {
   };
 
   get getMarks() {
-    if (this.status === true) {
+    if (this.isStillStudent) {
       return this.allMarks;
     } else {
       return null;
@@ -27,7 +27,7 @@ class Student {
   };
 
   set setMarks(mark) {
-    if (this.status === true) {
+    if (this.isStillStudent) {
       return this.allMarks = [...this.allMarks, mark];
     }
   }
@@ -41,13 +41,13 @@ class Student {
     }
 
   dismiss() {
-    this.status = false;
+    this.isStillStudent = false;
 
     return this.getInfo();
   };
 
   recover() {
-    this.status = true;
+    this.isStillStudent = true;
 
     return `The student ${this.fullName} is recovered`;   
   };
@@ -87,21 +87,21 @@ console.log('* * * Advanced * * *')
 
 class BudgetStudent extends Student {
   constructor (
-    university, course, fullName, allMarks, status, superStatus, scholarship) {
-      super (university, course, fullName, allMarks, status)
+    university, course, fullName, allMarks, isStillStudent, isBudgetStudent, scholarship) {
+      super (university, course, fullName, allMarks, isStillStudent)
   
-      this.superStatus = superStatus;
+      this.isBudgetStudent = isBudgetStudent;
       this.scholarship = scholarship;
       setInterval(() => this.getScholarship(), 5000);
     }
       
   getScholarship() {
-    if (this.superStatus === true & this.getAverageMark() >= 4 & this.status === true) {
+    if (this.isBudgetStudent && this.getAverageMark() >= 4 && this.isStillStudent) {
       console.log(`${this.fullName} received ${this.scholarship} grn of scholarship`)
-    } else if (this.superStatus === true & this.getAverageMark() < 4 & this.status === true) {
+    } else if (this.isBudgetStudent && this.getAverageMark() < 4 && this.isStillStudent) {
       console.log(`${this.fullName} can't receive their scholarship as their average mark is ${this.getAverageMark()} 
         that is less than 4`)
-    } else if (this.status === false) {
+    } else if (!this.isStillStudent) {
       console.log(`${this.fullName} doesn't receive their scholarship anymore as they are expelled`);
     }
   }
