@@ -37,6 +37,7 @@ const roundPayWithDiscount = + payWithDiscount.toFixed(2);
 let revenue = + (roundPayWithDiscount - sumOfPrices / 2).toFixed(4);
 
 //Base level
+console.warn("BASE")
 console.log('maxFromPrices: ' + maxFromPrices);
 console.log('minFromPrices: ' + minFromPrices);
 console.log('sumOfPrices: ' + sumOfPrices);
@@ -48,6 +49,7 @@ console.log('roundPayWithDiscount: ' + roundPayWithDiscount);
 console.log('revenue: ' + revenue);
 
 //Advanced
+document.writeln("<b>ADVANCED </b> <br>")
 document.writeln(`1) Максимальная цена: ${maxFromPrices}; <br> 
   2) Минимальная цена: ${minFromPrices}; <br> 
   3) Общая сумма всех товаров: ${sumOfPrices}; <br>
