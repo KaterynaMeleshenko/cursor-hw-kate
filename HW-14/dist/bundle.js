@@ -33,11 +33,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ostap": () => (/* binding */ ostap),
 /* harmony export */   "randomColor": () => (/* binding */ randomColor),
 /* harmony export */   "getCharacter": () => (/* binding */ getCharacter),
-/* harmony export */   "getPlanets": () => (/* binding */ getPlanets),
-/* harmony export */   "createIdGenerator": () => (/* binding */ createIdGenerator)
+/* harmony export */   "getPlanets": () => (/* binding */ getPlanets)
 /* harmony export */ });
-var _marked = /*#__PURE__*/regeneratorRuntime.mark(createIdGenerator);
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -169,36 +166,11 @@ function getPlanets() {
 }
 
 ; //HW-13
-
-function createIdGenerator() {
-  var i;
-  return regeneratorRuntime.wrap(function createIdGenerator$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          i = 1;
-
-        case 1:
-          if (!(i < Infinity)) {
-            _context.next = 7;
-            break;
-          }
-
-          _context.next = 4;
-          return i;
-
-        case 4:
-          i++;
-          _context.next = 1;
-          break;
-
-        case 7:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, _marked);
-}
+// function* createIdGenerator(){
+//   for (let i = 1; i < Infinity; i++) {
+//     yield i;
+//   }
+// }
 
 
 
@@ -18125,8 +18097,9 @@ console.log("Function from HW-8:", _homeworks_js__WEBPACK_IMPORTED_MODULE_1__.os
 console.log("Function from HW-9:", (0,_homeworks_js__WEBPACK_IMPORTED_MODULE_1__.randomColor)());
 console.log("Function from HW-11:", (0,_homeworks_js__WEBPACK_IMPORTED_MODULE_1__.getCharacter)()); //HW-12 function call
 
-(0,_homeworks_js__WEBPACK_IMPORTED_MODULE_1__.getPlanets)();
-console.log("Function from HW-13:", (0,_homeworks_js__WEBPACK_IMPORTED_MODULE_1__.createIdGenerator)().next().value); // CSS compilation 
+(0,_homeworks_js__WEBPACK_IMPORTED_MODULE_1__.getPlanets)(); //Doesn't work
+//console.log("Function from HW-13:", createIdGenerator().next().value);
+// CSS compilation 
 
 
  // Image import
