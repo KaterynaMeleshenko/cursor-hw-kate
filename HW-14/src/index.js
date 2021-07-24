@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {
   maxFromPrices, sumOfYorNumbers, withoutExactLetter, getPairs,
   filterEvenNumbers, calculateWordLetters, ukraine, getMyTaxes, Student, 
-  ostap, randomColor, getCharacter, getPlanets, createIdGenerator
+  ostap, randomColor, getCharacter, getPlanets, //createIdGenerator//
 } from "./homeworks.js";
 
 console.log("Function from HW-1:", +maxFromPrices(15, 20, 40));
@@ -30,7 +30,8 @@ console.log("Function from HW-11:", getCharacter());
 //HW-12 function call
 getPlanets();
 
-console.log("Function from HW-13:", createIdGenerator().next().value);
+//Doesn't work
+//console.log("Function from HW-13:", createIdGenerator().next().value);
 
 // CSS compilation 
 import "../../HW-13/styles.css";
