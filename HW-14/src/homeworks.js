@@ -128,13 +128,15 @@ function getPlanets() {
 };
 
 //HW-13
-// function* createIdGenerator(){
-//   for (let i = 1; i < Infinity; i++) {
-//     yield i;
-//   }
-// }
+function* createIdGenerator(){
+  for (let i = 1; i < Infinity; i++) {
+    yield i;
+  }
+}
 
 export {maxFromPrices, sumOfYorNumbers, withoutExactLetter, getPairs,
   filterEvenNumbers, calculateWordLetters, ukraine, getMyTaxes, Student, 
-  ostap, randomColor, getCharacter, getPlanets, //createIdGenerator// 
-};
+  ostap, randomColor, getCharacter, getPlanets, createIdGenerator
+}
+
+console.log("Function from HW-13:", createIdGenerator().next().value);
