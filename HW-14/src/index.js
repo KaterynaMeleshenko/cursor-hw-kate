@@ -1,6 +1,5 @@
 import _ from 'lodash';
 
-// Functions from previous homeworks
 import {
   maxFromPrices, sumOfYorNumbers, withoutExactLetter, getPairs,
   filterEvenNumbers, calculateWordLetters, ukraine, getMyTaxes, Student, 
@@ -30,15 +29,12 @@ console.log("Function from HW-11: random character is ", getCharacter());
 //HW-12 function call
 getPlanets();
 
-//Doesn't work
 const idGenerator = createIdGenerator();
 console.log("Function from HW-13: first step of generator is ", idGenerator.next().value);
 
-// CSS compilation 
 import "../../HW-13/styles.css";
 import "../../HW-12/styles.css";
 
-// Image import
 import "../../HW-12/background.jpeg";
 
 
