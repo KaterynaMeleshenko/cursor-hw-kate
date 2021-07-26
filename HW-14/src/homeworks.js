@@ -138,5 +138,3 @@ export {maxFromPrices, sumOfYorNumbers, withoutExactLetter, getPairs,
   filterEvenNumbers, calculateWordLetters, ukraine, getMyTaxes, Student, 
   ostap, randomColor, getCharacter, getPlanets, createIdGenerator
 }
-
-console.log("Function from HW-13:", createIdGenerator().next().value);
