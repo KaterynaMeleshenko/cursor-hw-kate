@@ -1,6 +1,6 @@
 // Basic
 // Infinite generator of identificators
-console.warn("Task 1")
+console.warn("BASE LEVEL")
 
 function* createTdGenerator(){
   for (let i = 1; i < Infinity; i++) {
@@ -18,7 +18,7 @@ console.log(idGenerator.next().value);
 
 // Advanced 
 //Fontsize generator
-console.warn("Task 2")
+console.warn("ADVANCED LEVEL")
 const initialSize = 14;
 
 function* newFontGenerator(size) {

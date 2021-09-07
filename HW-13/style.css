@@ -1,0 +1,81 @@
+body {
+  background: beige;
+}
+    
+h1, h2 {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 800;
+  color: purple;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+    
+h3 {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 600;
+  color: purple;
+  margin: 40px 0px 10px 20px;
+}
+  
+.info {
+  margin-left: 20px;
+}
+
+.closing-button {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  color: purple;
+  box-shadow: 0 0 0 2px purple;
+  padding: 20px 10px;
+  width: 300px;
+  height: 72px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.closing-button span {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 800;
+  position: relative;
+  z-index: 5;
+}
+
+.closing-button:before, .closing-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: purple;
+}
+
+.closing-button:before {
+  transform: translateX(-100%);
+  background: pink;
+  transition: transform .3s cubic-bezier(.55, .055, .675, .19);
+}
+
+.closing-button:after {
+  background: purple;
+  transform: translateX(100%);
+  transition: transform .3s cubic-bezier(.16, .73, .58, .62) .3s;
+}
+
+.closing-button:hover:before, .closing-button:hover:after {
+  transform: translateX(0);
+}
+
+.closing-button:hover {
+  color: beige;
+} 
+
