@@ -8,7 +8,8 @@ do {
   firstNum = prompt("Please, set the first integer number for calculation.", 0);
 } while (isNaN(+firstNum) || firstNum === null || !Number.isInteger(+firstNum));
 
-document.write(`Your first number is ${firstNum}.<br>`);
+document.write(`<h3>RESULT:</h3>`);
+document.write(`<div class="result">Your first number is ${firstNum}.</div>`);
 
 // verification of user's second number with alert in case of mistake and 
 // promt in cycle for a new try
@@ -17,7 +18,7 @@ do {
   secondNum = prompt("Please, set the second integer number for calculation.", 0);
 } while (isNaN(+secondNum) || secondNum === null || !Number.isInteger(+secondNum)); 
 
-document.write(`Your second number is ${secondNum}.<br>`);
+document.write(`<div class="result">Your second number is ${secondNum}.</div>`);
 
 // to become sure that the initial number is less than the second number
 
@@ -43,11 +44,11 @@ for (let i = initialNum; i <= lastNum; i++) {
 let decision = "";
 
 if (evenSkip) {
-  document.write(`You decided to skip even numbers.<br>`);
+  document.write(`<div class="result">You decided to skip even numbers.</div>`);
   decision = "excluding even numbers";
 } else {
-  document.write(`You decided not to skip even.<br>`);
+  document.write(`<div class="result">You decided not to skip even.</div>`);
   decision = "including even numbers";
   }
 
-document.write(`Total sum of all numbers between ${firstNum} and ${secondNum} (${decision}) is ${total}.`)
+document.write(`<div class="result">Total sum of all numbers between ${firstNum} and ${secondNum} (${decision}) is ${total}.</div>`)

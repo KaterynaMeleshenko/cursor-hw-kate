@@ -8,8 +8,10 @@ function getMaxDigit(number) {
 
   return `Maximum value among numbers "${number}" is number ${maxNumber}.`;
 }
- 
-document.write(`Function No 1: ${getMaxDigit(14354456464)} <br>`);
+
+document.write(`<div class="result">`);
+document.write(`<h3>RESULT:</h3>`);
+document.write(`Function #1: ${getMaxDigit(14354456464)} <br>`);
   
 
 // 2st function
@@ -32,7 +34,7 @@ function putNumberInPower(num, pow) {
   return `Number ${num} in power ${pow} is equal to ${result}.`;
 }
 
-document.write(`Function No 2: ${putNumberInPower(2, -3)} <br>`);
+document.write(`Function #2: ${putNumberInPower(2, -3)} <br>`);
   
   
 // 3rd function
@@ -45,7 +47,7 @@ function correctName(name) {
   return `Correct spelling of the name "${name}" is "${fullName}".`;
 }
   
-document.write(`Function No 3: ${correctName('kaTya')} <br>`);
+document.write(`Function #3: ${correctName('kaTya')} <br>`);
 
 
 // 4th function
@@ -54,10 +56,10 @@ const calculateRevenue = (salary, rate) => {
   return `Total 
     revenue from the salary in amount of ${salary} USD 
     excluding taxes of ${rate}% rate is 
-  ${ Math.trunc( salary * (1 - rate / 100) ) }`;
+  ${ Math.trunc( salary * (1 - rate / 100) ) }.`;
 }
 
-document.write(`Function No 4: ${calculateRevenue(7400, 19.5)} <br>`);
+document.write(`Function #4: ${calculateRevenue(7400, 19.5)} <br>`);
 
 
 // 5th function
@@ -67,10 +69,10 @@ function getRandomNumber(n, m) {
   const minNumber = Math.ceil( Math.min(n, m) );
   const randomNumber = Math.random() * (maxNumber- minNumber + 1) + minNumber;
 
-  return `Random number between ${minNumber} and ${maxNumber} is ${Math.trunc(randomNumber)}.`;
+  return `Random number between ${n} and ${m} is ${Math.trunc(randomNumber)}.`;
 }
 
-document.write(`Function No 5: ${getRandomNumber(-500, 400)} <br>`);
+document.write(`Function #5: ${getRandomNumber(-500.57, 436.42)} <br>`);
 
 
 // 6th function
@@ -89,7 +91,7 @@ function countLetter(letter, word) {
   return `${letterQuantity} letter(s) "${letter}" exist(s) in the word "${word}".`;
 }
 
-document.write(`Function No 6: ${countLetter('o', 'godprogrammer')} <br>`);
+document.write(`Function #6: ${countLetter('o', 'godprogrammer')} <br>`);
 
 
 // 7th function
@@ -108,7 +110,7 @@ function convertCurrency(sum) {
   return "Please choose $ or UAH as a currency.";
 }
 
-document.write(`Function No 7: ${convertCurrency('650 uah')} <br>`);
+document.write(`Function #7: ${convertCurrency('650 uah')} <br>`);
 
 
 // 8th function
@@ -123,7 +125,7 @@ function getRandomPassword(numbers = 8) {
   return `Your randomly created password is ${password}.`;
 }
 
-document.write(`Function No 8: ${getRandomPassword(6)} <br>`);
+document.write(`Function #8: ${getRandomPassword(6)} <br>`);
 
 
 // 9th function
@@ -134,7 +136,7 @@ const deleteLetter = (letter, word) => {
     is "${word.replaceAll(letter, "")}".`;
 }
 
-document.write(`Function No 9: ${deleteLetter("m", "godprogrammer")} <br>`);
+document.write(`Function #9: ${deleteLetter("m", "godprogrammer")} <br>`);
 
 
 // 10th function
@@ -151,7 +153,7 @@ function isPalindrome(expression) {
   return `The expression "${expression}" isn't a palindrome.`; 
 } 
 
-document.write(`Function No 10: ${isPalindrome("Dogma I am God")} <br>`);
+document.write(`Function #10: ${isPalindrome("Dogma I am God")} <br>`);
 
 // 11th function
 
@@ -164,7 +166,8 @@ function deleteDublicateLetter(expression) {
     }
   }
 
-  return `Non-dublicated letter(s) in the expression "${expression}" is (are) "${newExpression}".`;
+  return `Non-dublicated letter(s) in the expression "${expression}" is(are) "${newExpression}".`;
 }
   
-document.write(`Function No 11: ${deleteDublicateLetter("bhbjhvkjvnlskcmlnb")} <br>`);
+document.write(`Function #11: ${deleteDublicateLetter("bhbjhvkjvnlskcmlnb")} <br>`);
+document.write(`</div>`);

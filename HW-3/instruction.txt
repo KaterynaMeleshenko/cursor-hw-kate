@@ -1,4 +1,4 @@
-Домашнє завдання по темі Функції
+Домашнє завдання по темі "Функції"
 
 В цьому домашньому завданні вам необхідно зробити мінімум 6 функцій (на вибір).
 
@@ -24,4 +24,4 @@
 - Створіть функцію, яка перевіряє, чи є слово паліндромом. Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false, isPalyndrom("Я несу гусеня") -> true.
 - Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу. Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") -> "сктдеим".
 
-RESULT AT HW No3 https://katerynameleshenko.github.io/cursor-hw-kate/index.html
+RESULT: https://katerynameleshenko.github.io/cursor-hw-kate/HW-3/HW-3.html

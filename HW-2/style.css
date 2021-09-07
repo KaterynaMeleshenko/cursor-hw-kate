@@ -1,0 +1,24 @@
+body {
+  background: beige;
+}
+
+h1, h2 {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 800;
+  color: purple;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 600;
+  color: purple;
+  margin: 40px 0px 10px 20px;
+}
+
+.result {
+  margin-left: 20px;
+}

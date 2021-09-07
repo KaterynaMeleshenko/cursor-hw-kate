@@ -14,6 +14,11 @@ const litva = {
   vacancies: 1114, 
 };
 
+console.warn("INPUT DATA:");
+console.log("Ukraine: ", ukraine);
+console.log("Latvia: ", latvia);
+console.log("Litva: ", litva); 
+console.warn("RESULTS:");
 // Function #1
 
 function getMyTaxes(salary) {

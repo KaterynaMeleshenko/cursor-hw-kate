@@ -8,7 +8,8 @@ const getRandomArray  = (length, min, max) => {
   return new Array(length).fill(null).map(el => getRandomNumber(min, max) )
 }
 
-document.write(`Function #1: A random array is [${getRandomArray(8, 5, 20)}] <br>`);
+document.write(`<div class="info">`)
+document.write(`Function #1: A random array of 8 digits length and of numbers from 5 to 20 is [${getRandomArray(8, 5, 20)}]. <br>`);
 
 
 // function 2
@@ -35,7 +36,7 @@ const getModa = (...numbers) => {
   return moda;
 }
      
-document.write(`Function #2: Mode is/are ${getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2, 3)} <br>`); 
+document.write(`Function #2: Mode of numbers "1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2, 3" is/are ${getModa(1, 2, 3, 4, 5, 6, 2, 8, 7, 8, 3, 2, 3)}. <br>`); 
 
 
 // function #3
@@ -47,7 +48,7 @@ const getAverage = (...numbers) => {
   return +(sumNumbers / integerNumbers.length).toFixed(2);
 }
 
-document.write(`Function #3: Average is ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6)} <br>`); 
+document.write(`Function #3: Average of numbers "1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6" is ${getAverage(1, 5, -3, 6, 5, 8.5, 9, 5, 7, 6)}. <br>`); 
 
 
 // function #4
@@ -69,7 +70,7 @@ function getMedian(...numbers) {
   return median;
 }
 
-document.write(`Function #4: Median is ${getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
+document.write(`Function #4: Median of numbers "1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7" is ${getMedian(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)}. <br>`); 
 
 
 // function #5
@@ -80,7 +81,7 @@ function filterEvenNumbers(...numbers) {
   return oddNumbers;
 }
 
-document.write(`Function #5: Odd numbers are ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)} <br>`); 
+document.write(`Function #5: Odd numbers among numbers "1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7" are ${filterEvenNumbers(1, 7, -3, 6, 2, 8.5, 9, 8, -6, 6, 1, 7)}. <br>`); 
 
 
 // function #6
@@ -91,7 +92,7 @@ function countPositiveNumbers(...numbers) {
   return positiveNumbers.length; 
 }
 
-document.write(`Function #6: Quantity of positive numbers is ${countPositiveNumbers(4, 0, -5, 3, 7)} <br>`); 
+document.write(`Function #6: Quantity of positive numbers among numbers "4, 0, -5, 3, 7" is ${countPositiveNumbers(4, 0, -5, 3, 7)}. <br>`); 
 
 
 // function #7
@@ -102,7 +103,7 @@ function getDividedByFive(...numbers) {
   return numbersDividedByFive;
 }
 
-document.write(`Function #7: Numbers divided to five are ${getDividedByFive(-5, 10, 0, 3, 7, 20)} <br>`); 
+document.write(`Function #7: Numbers divided to five among numbers "-5, 10, 0, 3, 7, 20" are ${getDividedByFive(-5, 10, 0, 3, 7, 20)}. <br>`); 
 
     
 // function #8
@@ -120,7 +121,7 @@ const replaceBadWords = sentence => {
   return formattedSentence;
 }
   
-document.write(`Function #8: Polite phrase is ${replaceBadWords('You are fucking stupid bullshit!')} <br>`);
+document.write(`Function #8: Censored phrase of "You are fucking stupid bullshit!" is "${replaceBadWords('You are fucking stupid bullshit!')}". <br>`);
 
 
 // function #9
@@ -137,7 +138,7 @@ function divideByThree(word) {
   return syllables;
 }
   
-document.write(`Function #9: Syllables are ${divideByThree('abrakadabra')} <br>`);
+document.write(`Function #9: Syllables of the world "abrakadabra" are ${divideByThree('abrakadabra')}.<br>`);
 
 
 // function #10
@@ -171,4 +172,5 @@ function generateCombinations(word) {
 return recursion(word);
 }
    
-document.write(`Function #10: The set of combinations is ${generateCombinations('wood')} <br>`);
+document.write(`Function #10: The set of combinations from the word "wood" is ${generateCombinations('wood')}.<br>`);
+document.write(`</div>`)

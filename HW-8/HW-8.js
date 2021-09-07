@@ -55,7 +55,11 @@ class Student {
 
 const ostap = new Student("Hight school of the psychteraphy, Odessa", "first", "Ostap Rodomanskiy Bender", [5, 4, 4, 5], true);
 
+console.warn("INPUT DATA:");
+console.log("Student's info: ", ostap);
+
 // 2
+console.warn("BASE RESULTS:");
 console.log('Get info:', ostap.getInfo());
 
 // 3
@@ -69,13 +73,13 @@ console.log('Get new marks:', ostap.getMarks);
 console.log('Avarage mark is', ostap.getAverageMark());
 
 // 6
-console.log('* * * Dissmissing a student and attempt to put him a mark * * *')
+console.error('Dissmissing a student and attempt to put him a mark')
 console.log(ostap.dismiss());
 ostap.setMarks = 4;
 console.log(ostap.getMarks); 
 
 // 7
-console.log('* * * Recovering a student and attempt to put him a mark * * *')
+console.error('Recovering a student and attempt to put him a mark')
 console.log(ostap.recover());
 ostap.setMarks = 3;
 console.log(ostap.getMarks);
@@ -83,7 +87,7 @@ console.log(ostap.getMarks);
 
 // ADVANCED
 
-console.log('* * * Advanced * * *')
+console.warn("ADVANCED RESULTS:")
 
 class BudgetStudent extends Student {
   constructor (

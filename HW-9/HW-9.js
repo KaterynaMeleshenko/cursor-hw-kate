@@ -1,9 +1,13 @@
-// BASIC
+// BASE
 const squares = prompt('Please type the required number of squares');
 const rows = Math.ceil( Math.sqrt(squares) );
 
-document.body.innerHTML = `<div id="blocks" style="display: flex; flex-wrap: wrap; 
-  width: ${rows * 50}px; margin: auto"></div>`
+document.body.innerHTML = `<h1>Homework #09 | DOM</h1>
+  <h2>As per lecture dd 01.07.2021</h2>
+  <h3>RESULT:</h3>
+  <div id="blocks" style="display: flex; flex-wrap: wrap; 
+  width: ${rows * 50}px; margin-left: 20px; margin-top:20px"></div>`
+
 const area = document.getElementById('blocks'); 
 
 const randomColor = () => {
@@ -16,7 +20,7 @@ const randomColor = () => {
 
 function generateBlocks(squares) {
   area.insertAdjacentHTML('afterbegin', `<div style="width: ${rows * 50}px;
-    height:100px">BASIC TASK RESULT</div>`);
+    height:100px"><h3 style="margin-top:5px; margin-left: 0px">BASE LEVEL RESULT</h3></div>`);
 
   for (let i = 0; i < squares; i++) {
     const blockInfo = `<div class="fixedBlock" style="width: 50px; height: 50px;
@@ -43,7 +47,7 @@ function generateBlocksInterval(squares) {
   }
 
   area.insertAdjacentHTML('beforeend', `<div style="width: ${rows * 50}px; 
-    height:100px">ADVANCED TASK RESULT</div>`);
+    height:100px;"><h3 style="margin-top:5px; margin-left: 0px">ADVANCED TASK RESULT</h3></div>`);
 }
 
 generateBlocksInterval(squares);

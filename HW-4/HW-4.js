@@ -2,6 +2,11 @@ const students = ["Oleksandr", "Ihor", "Olena", "Ira", "Oleksiy", "Svitlana"];
 const themes = ["Defferential equation", "Automata theory", "Algorythms and data's structures"];
 const marks = [4, 5, 5, 3, 4, 5];
 
+console.warn("INPUT DATA:");
+console.log("Students", students);
+console.log("Themes", themes);
+console.log("Marks", marks);
+console.warn("RESULTS:");
 
 // Task #1: Pairs
 
@@ -16,7 +21,6 @@ function getPairs(students) {
 const pairsOfStudents = getPairs(students);
 
 console.log(getPairs(students));
-
 
 
 // Task #2: Themes

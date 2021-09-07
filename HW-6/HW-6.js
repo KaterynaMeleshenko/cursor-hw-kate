@@ -23,7 +23,11 @@ const students = [{
     cosmology: [5, 5, 5, 5]
   }
 }];
-  
+
+console.warn("INPUT DATA:");
+console.log(students);
+console.warn("RESULTS:");
+
  // Function #1
 
 function getSubjects(student) {
@@ -37,7 +41,7 @@ function getSubjects(student) {
     return subjects;
   }         
   
-console.log(`The subjects are ${getSubjects(students[0])}.`)
+console.log(`The subjects of Tanya are ${getSubjects(students[0])}.`)
   
    
  // Function #2 
@@ -50,7 +54,7 @@ function getAverageMark(student) {
   return averageMark = +(marksSum / marksArray.length).toFixed(2);
 }
 
-console.log(`The average mark is ${getAverageMark(students[0])}.` );
+console.log(`The average mark of Tanya is ${getAverageMark(students[0])}.` );
   
    
  // Function #3 
@@ -63,7 +67,7 @@ function getStudentInfo(student) {
   }
 }
 
-console.log(getStudentInfo(students[1]));
+console.log(`The information about Victor is: `, getStudentInfo(students[1]));
   
    
 // Function #4
@@ -116,4 +120,4 @@ function calculateWordLetters(word) {
     return wordObject;
   }
   
-  console.log(calculateWordLetters("test"));
+console.log("Result for the word 'test': ", calculateWordLetters("test"));
