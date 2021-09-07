@@ -1,63 +1,64 @@
-// Задаю переменные 
+// Setting variables
 const priceRing = 15.678;
 const priceEarrings = 123.965;
 const priceBraсelet = 90.2345;
 
-// Нахожу максимальную и минимальную цены
+// Max and min prices
 const maxFromPrices = Math.max(priceRing, priceEarrings, priceBraсelet);
 const minFromPrices = Math.min(priceRing, priceEarrings, priceBraсelet);
 
-// Нахожу общую сумму всех товаров
+// Total price of all items
 const sumOfPrices = priceRing + priceEarrings + priceBraсelet;
 
-// Нашла сумму всех товаров (с откинутыми цифрами после запятой) и округлила ее до сотен по правилам математики
+// Rounding total price
 const sumOfFloorPrices = Math.floor(priceRing) + Math.floor(priceEarrings) + Math.floor(priceBraсelet);
 const roundSum = Math.round(sumOfFloorPrices / 100) * 100;
 
-// Суммирую цены и общую сумму округляю в меньшую сторону. 
-//Полученную сумму проверяю на четность и нечетность
+// Checking if even
 const floorSum = Math.floor(sumOfPrices);
 const isEven = floorSum % 2 === 0;
 
-// рассчитываю сдачу с 500 грн
+// Calculation of charge
 const pay = 500;
 const change = pay - sumOfPrices;
 
-// Нахожу среднее арифметическое из полученных цен  
-//(с учетом, что количество цен - фиксированное) и округляю его до 2го знака после запятой
+// Calculation of average
 const meanSum = sumOfPrices / 3
 const roundMeanSum = + meanSum.toFixed(2);
 
-// Рассчитываю сумму с учетом скидки, округленную до 2ух знаков после запятой
+// Sum considering a discount
 const discount = Math.random(); 
 const payWithDiscount = sumOfPrices * (1 - discount);
 const roundPayWithDiscount = + payWithDiscount.toFixed(2);
 
-// Расчитываю чистую прибыль
-let revenue = + (roundPayWithDiscount - sumOfPrices / 2).toFixed(4);
+// Calculation of profit
+const revenue = + (roundPayWithDiscount - sumOfPrices / 2).toFixed(4);
 
 //Base level
-console.warn("BASE")
-console.log('maxFromPrices: ' + maxFromPrices);
-console.log('minFromPrices: ' + minFromPrices);
-console.log('sumOfPrices: ' + sumOfPrices);
-console.log('roundSum: ' + roundSum);
-console.log('isEven: ' + isEven);
-console.log('change: ' + change);
-console.log('roundMeanSum: ' + roundMeanSum);
-console.log('roundPayWithDiscount: ' + roundPayWithDiscount);
-console.log('revenue: ' + revenue);
+console.warn("INPUT DATA:");
+console.log("Ring, price: ", priceRing);
+console.log("Earrings, price: ", priceEarrings);
+console.log("Bracelet, price: ", priceBraсelet);
+console.warn("BASE RESULTS:")
+console.log('maxFromPrices: ', + maxFromPrices);
+console.log('minFromPrices: ', + minFromPrices);
+console.log('sumOfPrices: ', + sumOfPrices);
+console.log('roundSum: ', + roundSum);
+console.log('isEven: ', isEven);
+console.log('change: ', + change);
+console.log('roundMeanSum: ', + roundMeanSum);
+console.log('roundPayWithDiscount: ', + roundPayWithDiscount);
+console.log('revenue: ', + revenue);
+
+document.writeln(`<div class="result"> <h3>RESULT FOR BASE LEVEL:</h3> Please, look at console. </div>`)
 
 //Advanced
-document.writeln("<b>ADVANCED </b> <br>")
-document.writeln(`1) Максимальная цена: ${maxFromPrices}; <br> 
-  2) Минимальная цена: ${minFromPrices}; <br> 
-  3) Общая сумма всех товаров: ${sumOfPrices}; <br>
-  4) Сумма товаров без копеек, округленная до сотен (по правилам математики): ${roundSum}; <br>
-  5) Сумма товаров, округленная в меньшую сторону: ${isEven}; <br>
-  6) Сдача с 500 грн (без округлений): ${change}; <br>
-  7) Среднее значение суммы всех товаров, округленное до 2го знака после запятой: ${roundMeanSum}; <br>
-  8) Сумма к оплате (с учетом скидки), округленная до 2го знака после запятой: ${roundPayWithDiscount}; <br>
-  9) Чистая прибыль от продажи товара (со скидкой): ${revenue}; <br>`)
-
-
+document.writeln(`<div class="result"> <h3>RESULT FOR ADVANCED LEVEL: </h3> 1) Maximum price: ${maxFromPrices} units; <br> 
+  2) Minimum price: ${minFromPrices} units; <br> 
+  3) Total price of all items: ${sumOfPrices} units; <br>
+  4) Sum of items without coins, rounded to hundreds (as per math rules): ${roundSum} units;  <br>
+  5) If even sum of items rounded down: ${isEven}; <br>
+  6) Charge from 500 units (without rounding): ${change} units; <br>
+  7) Average sum of all items rounded to 2nd decimal: ${roundMeanSum} units; <br>
+  8) Sum to be paid (considering the discount) rounded to 2nd decimal: ${roundPayWithDiscount} units; <br>
+  9) Profit from sales (considering the discount): ${revenue} units. <br> </div>`)

@@ -1,4 +1,4 @@
-Домашнє завдання по темі Змінні та типи данних
+Домашнє завдання по темі "Змінні та типи данних"
 
 Base
 
@@ -34,4 +34,4 @@ Advanced
 ...і так далі
 
 
-RESULT AT HW No1 https://katerynameleshenko.github.io/cursor-hw-kate/index.html
+RESULT: https://katerynameleshenko.github.io/cursor-hw-kate/HW-1/HW-1.html

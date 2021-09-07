@@ -1,0 +1,50 @@
+body {
+  background: beige;
+}
+
+h1, h2 {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 800;
+  color: purple;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-family: Life Savers;
+  font-style: normal;
+  font-weight: 600;
+  color: purple;
+  margin: 40px 0px 10px 0px;
+}
+
+.items-set {
+  padding: 20px; 
+  margin: 20px;
+  border-radius: 20px;
+  border: 2px solid purple;
+  width: 300px;
+}
+
+span {
+  color: purple;
+  font-family: Life Savers;
+  text-align: center;
+  font-weight: 600; 
+}
+
+.items {
+  margin-top: 10px;
+}
+
+.item {
+  border: 1px dashed purple;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 5px;
+}
+
+.result {
+  margin-left: 20px;
+}
